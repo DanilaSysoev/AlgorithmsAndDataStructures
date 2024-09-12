@@ -434,4 +434,99 @@ public class DoubleLinkedListTests
             () => dll[11] = 100
         );
     }
+
+    [Test]
+    public void Delete_RemoveFromHead_ListStructureCorrectAfterRemoving()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        var head = dll.AddTail(10);
+        dll.AddTail(20);
+        dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+        dll.AddTail(60);
+
+        dll.Delete(head);
+        Assert.That(dll[0], Is.EqualTo(20));
+        Assert.That(dll[1], Is.EqualTo(30));
+        Assert.That(dll[2], Is.EqualTo(40));
+        Assert.That(dll[3], Is.EqualTo(50));
+        Assert.That(dll[4], Is.EqualTo(60));
+    }
+    [Test]
+    public void Delete_RemoveFromHead_SizeDecreased()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        var head = dll.AddTail(10);
+        dll.AddTail(20);
+        dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+        dll.AddTail(60);
+
+        dll.Delete(head);
+        Assert.That(dll.Size, Is.EqualTo(5));
+    }
+    [Test]
+    public void Delete_RemoveFromTail_ListStructureCorrectAfterRemoving()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        dll.AddTail(10);
+        dll.AddTail(20);
+        dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+        var tail = dll.AddTail(60);
+
+        dll.Delete(tail);
+        Assert.That(dll[0], Is.EqualTo(10));
+        Assert.That(dll[1], Is.EqualTo(20));
+        Assert.That(dll[2], Is.EqualTo(30));
+        Assert.That(dll[3], Is.EqualTo(40));
+        Assert.That(dll[4], Is.EqualTo(50));
+    }
+    [Test]
+    public void Delete_RemoveFromTail_SizeDecreased()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        dll.AddTail(10);
+        dll.AddTail(20);
+        dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+        var tail = dll.AddTail(60);
+
+        dll.Delete(tail);
+        Assert.That(dll.Size, Is.EqualTo(5));
+    }
+    [Test]
+    public void Delete_RemoveFromMiddle_ListStructureCorrectAfterRemoving()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        dll.AddTail(10);
+        dll.AddTail(20);
+        var item = dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+
+        dll.Delete(item);
+        Assert.That(dll[0], Is.EqualTo(10));
+        Assert.That(dll[1], Is.EqualTo(20));
+        Assert.That(dll[2], Is.EqualTo(40));
+        Assert.That(dll[3], Is.EqualTo(50));
+    }
+    [Test]
+    public void Delete_RemoveFromMiddle_SizeDecreased()
+    {
+        DoubleLinkedList<int> dll = new DoubleLinkedList<int>();
+        dll.AddTail(10);
+        dll.AddTail(20);
+        var item = dll.AddTail(30);
+        dll.AddTail(40);
+        dll.AddTail(50);
+        dll.AddTail(60);
+
+        dll.Delete(item);
+        Assert.That(dll.Size, Is.EqualTo(5));
+    }
 }

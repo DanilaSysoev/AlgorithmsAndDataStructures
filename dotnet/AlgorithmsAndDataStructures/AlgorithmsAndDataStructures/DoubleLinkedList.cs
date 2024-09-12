@@ -84,6 +84,7 @@ public class DoubleLinkedList<T>
     {
         node.Previous!.Next = node.Next;
         node.Next!.Previous = node.Previous;
+        Size--;
     }
 
     private Node<T> FindNode(int index)
