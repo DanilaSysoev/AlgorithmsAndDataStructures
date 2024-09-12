@@ -1,4 +1,4 @@
-namespace DynamicArrayLib;
+namespace AlgorithmsAndDataStructures;
 
 public class DynamicArray<T>
 {

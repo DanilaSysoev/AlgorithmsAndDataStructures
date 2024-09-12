@@ -1,7 +1,6 @@
-using System;
 using NUnit.Framework;
 
-namespace DynamicArrayLib.Tests;
+namespace AlgorithmsAndDataStructures.Tests;
 
 public class DynamicArrayTests
 {
