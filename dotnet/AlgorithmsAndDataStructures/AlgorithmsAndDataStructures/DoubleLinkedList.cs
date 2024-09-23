@@ -24,6 +24,7 @@ public class DoubleLinkedList<T>
     public Node<T> Head => dummy.Next!;
     public Node<T> Tail => dummy.Previous!;
     public int Size { get; private set; }
+    public bool IsEmpty => Head == dummy;
 
     public DoubleLinkedList()
     {

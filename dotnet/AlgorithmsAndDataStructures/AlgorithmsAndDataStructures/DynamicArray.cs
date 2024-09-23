@@ -28,6 +28,12 @@ public class DynamicArray<T>
         capacity = DefaultCapacity;
         size = 0;
     }
+    public DynamicArray(int size)
+    {
+        data = new T[size];
+        capacity = size;
+        this.size = size;
+    }
 
     public void Add(T value)
     {
